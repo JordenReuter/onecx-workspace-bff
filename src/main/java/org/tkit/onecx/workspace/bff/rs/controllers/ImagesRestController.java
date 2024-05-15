@@ -7,6 +7,7 @@ import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.Response;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
+import org.jboss.resteasy.reactive.Cache;
 import org.jboss.resteasy.reactive.ClientWebApplicationException;
 import org.jboss.resteasy.reactive.server.ServerExceptionMapper;
 import org.tkit.onecx.workspace.bff.rs.mappers.ExceptionMapper;
@@ -66,7 +67,7 @@ public class ImagesRestController implements ImagesInternalApiService {
     @Override
     public Response getProductLogo(String productName) {
         Response.ResponseBuilder responseBuilder;
-        try (Response response = productStoreImageClient.getImage(productName, RefType.LOGO)) {
+        try (Response response = productStoreImageClient.getImage(productName, RefType.valueOf("LOGO"))) {
             var contentType = response.getHeaderString(HttpHeaders.CONTENT_TYPE);
             var contentLength = response.getHeaderString(HttpHeaders.CONTENT_LENGTH);
             var body = response.readEntity(byte[].class);
