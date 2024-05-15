@@ -66,7 +66,7 @@ public class ImagesRestController implements ImagesInternalApiService {
     @Override
     public Response getProductLogo(String productName, RefTypeDTO refType) {
         Response.ResponseBuilder responseBuilder;
-        try (Response response = productStoreImageClient.getImage(productName, RefType.valueOf("LOGO"))) {
+        try (Response response = productStoreImageClient.getImage(productName, imageMapper.mapLogoRef(refType))) {
             var contentType = response.getHeaderString(HttpHeaders.CONTENT_TYPE);
             var contentLength = response.getHeaderString(HttpHeaders.CONTENT_LENGTH);
             var body = response.readEntity(byte[].class);

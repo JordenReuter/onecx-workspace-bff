@@ -17,4 +17,5 @@ public interface ImagesMapper {
 
     RefType map(RefTypeDTO refType);
 
+    gen.org.tkit.onecx.product.store.client.model.RefType mapLogoRef(RefTypeDTO refType);
 }
