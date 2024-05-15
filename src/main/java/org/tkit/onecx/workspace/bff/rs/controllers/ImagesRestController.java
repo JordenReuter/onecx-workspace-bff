@@ -14,7 +14,6 @@ import org.tkit.onecx.workspace.bff.rs.mappers.ImagesMapper;
 import org.tkit.quarkus.log.cdi.LogService;
 
 import gen.org.tkit.onecx.product.store.client.api.ImagesApi;
-import gen.org.tkit.onecx.product.store.client.model.RefType;
 import gen.org.tkit.onecx.workspace.bff.rs.internal.ImagesInternalApiService;
 import gen.org.tkit.onecx.workspace.bff.rs.internal.model.ImageInfoDTO;
 import gen.org.tkit.onecx.workspace.bff.rs.internal.model.RefTypeDTO;

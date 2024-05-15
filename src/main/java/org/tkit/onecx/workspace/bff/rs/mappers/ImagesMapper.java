@@ -3,6 +3,7 @@ package org.tkit.onecx.workspace.bff.rs.mappers;
 import org.mapstruct.Mapper;
 import org.tkit.quarkus.rs.mappers.OffsetDateTimeMapper;
 
+import gen.org.tkit.onecx.product.store.client.model.ProductImageRefType;
 import gen.org.tkit.onecx.workspace.bff.rs.internal.model.ImageInfoDTO;
 import gen.org.tkit.onecx.workspace.bff.rs.internal.model.RefTypeDTO;
 import gen.org.tkit.onecx.workspace.client.model.ImageInfo;
@@ -17,5 +18,5 @@ public interface ImagesMapper {
 
     RefType map(RefTypeDTO refType);
 
-    gen.org.tkit.onecx.product.store.client.model.RefType mapLogoRef(RefTypeDTO refType);
+    ProductImageRefType mapLogoRef(RefTypeDTO refType);
 }
